@@ -10,7 +10,6 @@
     --btn-color: #2271b1;
     --hover-color: #0a4b78;
     --border-color: #3c434a5d;
-    
     --first-color: #1d2327;
     --second-color: #2c3338;
 }
@@ -18,13 +17,12 @@
 .style-input{
     height: 40px;
     width: 100%;
-
     outline: none;
     border: 1px solid var(--border-color);
     border-radius: 3px;
-
     font-size: 1.4rem;
     font-weight: 400;
+    padding-left: 7px;
 }
 .style-input:focus{
     border: 2px solid var(--btn-color);
@@ -33,14 +31,12 @@
 #container-login{
     background-color: var(--bg-color);
     height: 100vh;
-
     display: flex;
     justify-content: center;
 }
 #login{
     height: 510px;
     margin-top: 65px;
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -55,11 +51,9 @@
     height: 254px;
     width: 320px;
     padding: 20px;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
-
     border: 1px solid #3c434a5d;
 }
 .form-login p{
@@ -72,7 +66,6 @@
 .user-input-btn-check{
     margin-top: 15px;
     height: 40px;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -97,17 +90,14 @@
 .user-input-btn-check input[type=submit]{
     height: 34px;
     width: 69px;
-
     background-color: var(--btn-color);
     color: #fff;
     outline: none;
     border: none;
-
     border-radius: 3px;
 }
 .user-input-btn-check input[type=submit]:hover{
     background-color: var(--hover-color);
-
     cursor: pointer;
 }
 .footer-info{
@@ -128,14 +118,12 @@
 #container-register{
     background-color: var(--bg-color);
     height: 100vh;
-
     display: flex;
     justify-content: center;
 }
 #register{
     height: 510px;
     margin-top: 65px;
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -149,13 +137,11 @@
     background-color: #fff;
     width: 320px;
     padding: 20px;
-
     border: 1px solid var(--border-color);
 }
 .user-input-btn{
     margin-top: 15px;
     height: 40px;
-
     display: flex;
     align-items: center;
     justify-content: end;
@@ -163,12 +149,10 @@
 .user-input-btn input[type=submit]{
     height: 34px;
     width: 69px;
-
     background-color: var(--btn-color);
     color: #fff;
     outline: none;
     border: none;
-
     border-radius: 3px;
 }
 .user-input-btn input[type=submit]:hover{
