@@ -1,0 +1,178 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+:root{
+    --bg-color: #f0f0f1;
+    --font-color: #3c434a;
+    --btn-color: #2271b1;
+    --hover-color: #0a4b78;
+    --border-color: #3c434a5d;
+    
+    --first-color: #1d2327;
+    --second-color: #2c3338;
+}
+/*===== STANDARD =====*/
+.style-input{
+    height: 40px;
+    width: 100%;
+
+    outline: none;
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+.style-input:focus{
+    border: 2px solid var(--btn-color);
+}
+/*===== LOGIN PAGE =====*/
+#container-login{
+    background-color: var(--bg-color);
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+}
+#login{
+    height: 510px;
+    margin-top: 65px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#login h1 img{
+    height: 84px;
+    width: 84px;
+    margin: 20px 0px;
+}
+.form-login{
+    background-color: #fff;
+    height: 254px;
+    width: 320px;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    border: 1px solid #3c434a5d;
+}
+.form-login p{
+    color: var(--font-color);
+    font-size: .85rem;
+}
+.user-input-name{
+    margin-bottom: 20px;
+}
+.user-input-btn-check{
+    margin-top: 15px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.user-input-btn-check label{
+    color: var(--font-color);
+    font-size: .95rem;
+    margin-left: 5px;
+}
+.user-input-btn-check div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.user-input-btn-check input[type=checkbox]{
+    height: 16px;
+    width: 16px;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+}
+.user-input-btn-check input[type=submit]{
+    height: 34px;
+    width: 69px;
+
+    background-color: var(--btn-color);
+    color: #fff;
+    outline: none;
+    border: none;
+
+    border-radius: 3px;
+}
+.user-input-btn-check input[type=submit]:hover{
+    background-color: var(--hover-color);
+
+    cursor: pointer;
+}
+.footer-info{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.footer-info p a{
+    text-decoration: none;
+    color: var(--font-color);
+    font-size: 0.8rem;
+}
+.footer-info p a:hover{
+    color: var(--hover-color);
+}
+/*===== REGISTER PAGE =====*/
+#container-register{
+    background-color: var(--bg-color);
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+}
+#register{
+    height: 510px;
+    margin-top: 65px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#register h1 img{
+    height: 84px;
+    width: 84px;
+    margin: 20px 0px;
+}
+.form-register{
+    background-color: #fff;
+    width: 320px;
+    padding: 20px;
+
+    border: 1px solid var(--border-color);
+}
+.user-input-btn{
+    margin-top: 15px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+.user-input-btn input[type=submit]{
+    height: 34px;
+    width: 69px;
+
+    background-color: var(--btn-color);
+    color: #fff;
+    outline: none;
+    border: none;
+
+    border-radius: 3px;
+}
+.user-input-btn input[type=submit]:hover{
+    background-color: var(--hover-color);
+    cursor: pointer;
+}
+/*===== HOME PAGE =====*/
