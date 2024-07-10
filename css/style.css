@@ -197,6 +197,7 @@
     align-items: center;
     justify-content: space-between;
 }
+/*===== HEADER ESQ =====*/
 .header-menu-esq{
     display: flex;
 }
@@ -245,8 +246,105 @@
 }
 .menu-interno li a{
     width: 100%;
+    height: 36px;
     transition: var(--transition);
 }
 .menu-interno li:hover a{
     color: var(--btn-color);
+}
+/*===== HEADER DIR =====*/
+.header-menu-dir .menu-dir{
+    display: flex;
+    align-items: center;
+}
+.menu-dir img{
+    width: 18px;
+    height: 18px;
+    margin-left: 5px;
+}
+.header-menu-dir a{
+    padding: 5px 10px;
+    font-size: .9rem;
+    font-weight: 400;
+    text-decoration: none;
+    color: #f0f0f1;
+    display: block;
+    transition: var(--transition);
+    position: relative;
+}
+.header-menu-dir a:hover{
+    background-color: var(--second-color);
+    color: var(--btn-color);
+}
+.sub-menu-dir{
+    position: absolute;
+    width: 200px;
+    background-color: var(--second-color);
+    right: 0px;
+    padding: 5px;
+    display: none;
+    transition: var(--transition);
+}
+.header-menu-dir:hover .sub-menu-dir{
+    display: block;
+}
+.sub-menu-dir .sub-menu-container{
+    display: flex;
+}
+.sub-menu-dir img{
+    height: 60px;
+    width: 60px;
+}
+/*===== NAV HEADER LATERAL*/
+.nav-menu{
+    margin-top: 10px;
+}
+#nav-home-lat .nav-menu li{
+    list-style: none;
+    height: 35px;
+}
+.nav-menu .nav-menu-item .menu-item{
+    padding: 5px 10px 10px 13px;
+    font-size: .9rem;
+    font-weight: 400;
+    text-decoration: none;
+    color: #f0f0f1;
+    display: block;
+    transition: var(--transition);
+    border-left: 4px solid var(--first-color);
+}
+.nav-menu li a i{
+    margin-right: 7px;
+}
+.nav-menu .menu-item:hover{
+    color: var(--btn-color);
+    border-left: 4px solid var(--btn-color);
+}
+.nav-menu-item{
+    position: relative;
+}
+.nav-menu-interno{
+    display: none;
+    position: absolute;
+    width: 160px;
+    top: 0px;
+    left: 160px;
+    background-color: var(--second-color);
+}
+.nav-menu .nav-menu-item:hover .nav-menu-interno{
+    display: block;
+}
+.nav-menu-interno a{
+    padding: 5px 10px 10px 13px;
+    font-size: .9rem;
+    font-weight: 400;
+    text-decoration: none;
+    color: #f0f0f1;
+    display: block;
+    transition: var(--transition);
+    border-left: 4px solid var(--second-color);
+}
+.nav-menu-interno a:hover{
+    color: var(--btn-color);
+    border-left: 4px solid var(--btn-color);
 }
