@@ -677,7 +677,13 @@
 .form-usuarios-bottom{
     margin-top: 20px;
 }
-
+/*===== CONFIGURACAO =====*/
+#main-config{
+    padding: 20px;
+}
+.form-config .nome, .info-contato{
+    margin-bottom: 20px;
+}
 /*===== FOOTER PAGE =====*/
 #footer{
     background-color: var(--bg-color);
