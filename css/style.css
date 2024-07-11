@@ -370,6 +370,314 @@
 .active{
     width: 40px;
 }
+/*===== MAIN PAGE =====*/
+.title-padrao{
+    font-size: 1.9rem;
+    font-weight: 400;
+    margin: 20px 0px 0px 20px;
+}
+/*===== PAINEL =====*/
+.main-painel{
+    padding: 20px;
+}
+.main-painel .bv-h2-painel{
+    height: 225px;
+    background-color: var(--first-color);
+    display: flex;
+    align-items: center;
+}
+.main-painel .bv-h2-painel h2{
+    color: #fff;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    font-size: 3rem;
+    font-weight: 400;
+}
+.main-painel .bv-links-painel{
+    background-color: #fff;
+    height: 225px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.main-painel .bv-links-painel div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    height: 100%;
+    width: 480px;
+}
+.main-painel .bv-links-painel h4{
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+.main-painel .bv-links-painel p{
+    font-size: .9rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+    color: var(--font-color);
+}
+.main-painel .bv-links-painel a{
+    font-size: .9rem;
+    font-weight: 400;
+    color: var(--btn-color);
+}
+.main-painel .bv-links-painel a:hover{
+    color: var(--hover-color);
+}
+/*===== POST =====*/
+.form-post{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 30px;
+}
+.container-form-esq{
+    height: 100%;
+}
+.container-form-esq select{
+    height: 100%;
+    outline: none;
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+}
+.form-post select:focus{
+    border: 2px solid var(--btn-color);
+    color: var(--btn-color);   
+}
+.form-post input[type=submit]{
+    height: 100%;
+    border: 1px solid var(--btn-color);
+    color: var(--btn-color);
+    border-radius: 3px;
+    padding: 0px 7px;
+}
+.form-post input[type=submit]:hover{
+    border: 1px solid var(--hover-color);
+    color: var(--hover-color);
+    cursor: pointer;
+}
+.container-form-dir{
+    height: 100%;
+}
+.container-form-dir input[type=search]{
+    height: 100%;
+    outline: none;
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+    padding-left: 5px;
+}
+.form-post input[type=search]:focus{
+    border: 2px solid var(--btn-color);
+    color: var(--btn-color);   
+}
+.main-post{
+    padding: 20px;
+}
+.main-post .table-post{
+    width: 100%;
+    border: 1px solid var(--border-color);
+    border-spacing: 0px;
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+.main-post .table-post td{
+    border-bottom: 1px solid var(--border-color);
+    border-top: 1px solid var(--border-color);
+}
+.main-post .table-post thead, tfoot{
+    height: 37px;
+    background-color: #fff;
+}
+.main-post .table-post tbody{
+    height: 57px;
+    text-align: center;
+    background-color: var(--bg-color);
+}
+.table-post a{
+    text-decoration: none;
+    color: var(--btn-color);
+}
+.table-post a:hover{
+    color: var(--hover-color);
+}
+.table-post td{
+    border-bottom: 1px solid var(--border-color);
+    border-top: 1px solid var(--border-color);
+}
+/*===== PAGINAS =====*/
+.form-paginas{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 30px;
+}
+.container-form-esq{
+    height: 100%;
+}
+.container-form-esq select{
+    height: 100%;
+    outline: none;
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+}
+.form-paginas select:focus{
+    border: 2px solid var(--btn-color);
+    color: var(--btn-color);   
+}
+.form-paginas input[type=submit]{
+    height: 100%;
+    border: 1px solid var(--btn-color);
+    color: var(--btn-color);
+    border-radius: 3px;
+    padding: 0px 7px;
+}
+.form-paginas input[type=submit]:hover{
+    border: 1px solid var(--hover-color);
+    color: var(--hover-color);
+    cursor: pointer;
+}
+.container-form-dir{
+    height: 100%;
+}
+.container-form-dir input[type=search]{
+    height: 100%;
+    outline: none;
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+    padding-left: 5px;
+}
+.form-paginas input[type=search]:focus{
+    border: 2px solid var(--btn-color);
+    color: var(--btn-color);   
+}
+.main-paginas{
+    padding: 20px;
+}
+.main-paginas .table-paginas{
+    width: 100%;
+    border: 1px solid var(--border-color);
+    border-spacing: 0px;
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+.main-paginas .table-paginas td{
+    border-bottom: 1px solid var(--border-color);
+    border-top: 1px solid var(--border-color);
+}
+.main-paginas .table-paginas thead, tfoot{
+    height: 37px;
+    background-color: #fff;
+}
+.main-paginas .table-paginas tbody{
+    height: 57px;
+    text-align: center;
+    background-color: var(--bg-color);
+}
+.table-paginas a{
+    text-decoration: none;
+    color: var(--btn-color);
+}
+.table-paginas a:hover{
+    color: var(--hover-color);
+}
+.table-paginas td{
+    border-bottom: 1px solid var(--border-color);
+    border-top: 1px solid var(--border-color);
+}
+/*===== USUARIOS =====*/
+.main-usuarios{
+    padding: 20px;
+}
+.form-usuarios{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 30px;
+}
+.container-form-esq{
+    height: 100%;
+}
+.container-form-esq select{
+    height: 100%;
+    outline: none;
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+}
+.form-usuarios select:focus{
+    border: 2px solid var(--btn-color);
+    color: var(--btn-color);   
+}
+.form-usuarios input[type=submit]{
+    height: 100%;
+    border: 1px solid var(--btn-color);
+    color: var(--btn-color);
+    border-radius: 3px;
+    padding: 0px 7px;
+}
+.form-usuarios input[type=submit]:hover{
+    border: 1px solid var(--hover-color);
+    color: var(--hover-color);
+    cursor: pointer;
+}
+.container-form-dir{
+    height: 100%;
+}
+.container-form-dir input[type=search]{
+    height: 100%;
+    outline: none;
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+    padding-left: 5px;
+}
+.form-usuarios input[type=search]:focus{
+    border: 2px solid var(--btn-color);
+    color: var(--btn-color);   
+}
+.main-paginas{
+    padding: 20px;
+}
+.main-usuarios .table-usuarios{
+    width: 100%;
+    border: 1px solid var(--border-color);
+    border-spacing: 0px;
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+.main-usuarios .table-usuarios td{
+    border-bottom: 1px solid var(--border-color);
+    border-top: 1px solid var(--border-color);
+}
+.table-usuarios thead, .tfoot-usuarios{
+    height: 37px;
+    background-color: #fff;
+    text-align: left;
+}
+.table-usuarios input[type=checkbox]{
+    margin-left: 10px;
+}
+.main-usuarios .table-usuarios tbody{
+    height: 57px;
+    text-align: start;
+    background-color: var(--bg-color);
+}
+.table-usuarios a{
+    text-decoration: none;
+    color: var(--btn-color);
+}
+.table-usuarios a:hover{
+    color: var(--hover-color);
+}
+.table-usuarios td{
+    border-bottom: 1px solid var(--border-color);
+    border-top: 1px solid var(--border-color);
+}
+.form-usuarios-bottom{
+    margin-top: 20px;
+}
+
 /*===== FOOTER PAGE =====*/
 #footer{
     background-color: var(--bg-color);

@@ -130,13 +130,11 @@
                     break;
                 case 'configuracao':
                     include_once("pages/configuracoes.html");
-                    break;
-                
+                    break; 
                     default:
                 include_once("pages/painel.html");
                     break;
-            }
-            ?>
+            }?>
         </main>
         <footer id="footer">
             <p><em>Obrigado por criar com <a href="?pag=painel">WordPress.</a></em></p>
