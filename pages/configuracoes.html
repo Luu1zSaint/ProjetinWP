@@ -14,35 +14,49 @@
         <form class="form-config" action="#">
             <div class="nome">
                 <h4>Nome</h4>
-                <div class="nome-de-usuario">
-                    <p>Nome de usuário</p>
-                    <p><span>Nome de usuário</span>Não é possível alterar nomes de usuários.</p>
+                <div class="nome-de-usuario d-flex">
+                    <div class="div-title">
+                        <p class="title">Nome de usuário</p>
+                    </div>
+                    <span class="input-area-span ">Nome de usuário</span>
+                    <span class="aviso-nome">Não é possível alterar nomes de usuários.</span>
                 </div> 
-                <div>
-                    <label for="nome">Nome</label>
-                    <input type="text" name="nome" id="">
+                <div class="p-nome d-flex">
+                    <div class="div-title"><label class="title" for="nome">Nome</label></div>
+                    <input class="input-area" type="text" name="nome" id="">
                 </div>
-                <div>
-                    <label for="sobrenome">Sobrenome</label>
-                    <input type="text" name="sobrenome" id="">
+                <div class="sobrenome d-flex">
+                    <div class="div-title">
+                        <label class="title" for="sobrenome">Sobrenome</label>
+                    </div>
+                    <input class="input-area" type="text" name="sobrenome" id="">
                 </div>
-                <div>
-                    <label for="apelido">Apelido</label>
-                    <input type="text" name="apelido" id="">
+                <div class="apelido d-flex">
+                    <div class="div-title">
+                        <label class="title" for="apelido">Apelido</label>
+                    </div>
+                    <input class="input-area" type="text" name="apelido" id="">
                 </div> 
             </div>
             <div class="info-contato">
                 <h4>Informações de contato</h4>
-                <div>
-                    <label for="amail">E-mail</label>
-                    <input type="email" name="email" id="">
+                <div class="email d-flex">
+                    <div class="div-title">
+                        <label class="title" for="amail">E-mail</label>
+                    </div>
+                    <input class="input-area" type="email" name="email" id="">
                 </div>
             </div>
             <div class="sobre-voce">
                 <h4>Sobre você</h4>
-                <div>
-                    <label for="bio">Informações biográficas</label>
-                    <input type="text" name="bio" id="">
+                <div class="bio d-flex">
+                    <div class="div-title">
+                        <label class="title" for="bio">Informações biográficas</label>
+                    </div>
+                    <div>
+                        <input class="input-area input-bio" type="text" name="bio" id="">
+                        <p>Escreva uma minibiografia para constar no seu perfil. Essas informações poderão ser vistas por todos.</p>
+                    </div>
                 </div>
             </div>
             <input type="submit" value="Atualizar perfil">
