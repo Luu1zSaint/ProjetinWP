@@ -11,7 +11,7 @@
         <h1><img src="../assets/img/wordpress-logo.svg" alt="wordpress-logo"></h1>
         <form class="form-login" action="#" method="post">
             <div class="user-input-name div-input">
-                <p>Nome de usuário ou endereço de e-mail</p>
+                <p>Endereço de e-mail</p>
                 <input class="style-input" type="text" name="name" id="">
             </div>
             <div class="user-input-pass div-input">

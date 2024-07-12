@@ -47,6 +47,19 @@
                     <input class="input-area" type="email" name="email" id="">
                 </div>
             </div>
+            <div class="cargo">
+                <h4>Cargo</h4>
+                <div class="d-flex">
+                    <div class="div-title">
+                        <label class="title" for="cargo">Cargo do usuário</label>
+                    </div>
+                    <select class="input-area" name="cargo" id="">
+                        <option value="cargo">Cargo</option>
+                        <option value="adm">Adimininistradro</option>
+                        <option value="user">Usuário</option>
+                    </select>
+                </div>
+            </div>
             <div class="sobre-voce">
                 <h4>Sobre você</h4>
                 <div class="bio d-flex">

@@ -1,3 +1,7 @@
+<?php
+include_once('../config/conn.php');
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -9,14 +13,14 @@
 <body id="container-register">
     <div id="register">
         <h1><img src="../assets/img/wordpress-logo.svg" alt="wordpress-logo"></h1>
-        <form class="form-register" action="#" method="post">
+        <form class="form-register" method="post">
             <div class="user-input-name div-input">
-                <p>Nome Completo</p>
+                <p>Nome</p>
                 <input class="style-input" type="text" name="name" id="">
             </div>
             <div class="user-input-name div-input">
-                <p>Apelido</p>
-                <input class="style-input" type="text" name="apelido" id="">
+                <p>Data de nascimento</p>
+                <input class="style-input" type="date" name="data-nasc" id="">
             </div>
             <div class="user-input-name div-input">
                 <p>Endereço de e-mail</p>

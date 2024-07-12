@@ -80,22 +80,22 @@
             <?php
             switch ($_GET['pag']) {
                 case 'painel':
-                    include_once("pages/painel.html");
+                    include_once("pages/painel.php");
                     break;
                 case 'sobre':
-                    include_once("pages/sobre.html");
+                    include_once("pages/sobre.php");
                     break;
                 case 'perfil':
-                    include_once("pages/perfil.html");
+                    include_once("pages/perfil.php");
                     break;
                 case 'usuarios':
-                    include_once("pages/usuarios.html");
+                    include_once("pages/usuarios.php");
                     break;
                 case 'configuracao':
-                    include_once("pages/configuracoes.html");
+                    include_once("pages/configuracoes.php");
                     break; 
                     default:
-                include_once("pages/painel.html");
+                include_once("pages/painel.php");
                     break;
             }?>
         </main>

@@ -124,7 +124,7 @@
 }
 #register{
     height: 510px;
-    margin-top: 65px;
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -349,27 +349,6 @@
     color: var(--btn-color);
     border-left: 4px solid var(--btn-color);
 }
-/*ADD JS*/
-.interno-abaixo{
-    width: 160px;
-    background-color: var(--second-color); 
-}
-.interno-abaixo a{
-    padding: 5px 10px 10px 13px;
-    font-size: .9rem;
-    font-weight: 400;
-    text-decoration: none;
-    color: #f0f0f1;
-    transition: var(--transition);
-    border-left: 4px solid var(--second-color);
-}
-.interno-abaixo a:hover{
-    color: var(--btn-color);
-    border-left: 4px solid var(--btn-color);
-}
-.active{
-    width: 40px;
-}
 /*===== MAIN PAGE =====*/
 .title-padrao{
     font-size: 1.9rem;
@@ -537,7 +516,7 @@
 .form-config .d-flex{
     display: flex;
     flex-direction: row;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 .form-config .nome-de-usuario .aviso-nome{
     font-size: .8rem;
