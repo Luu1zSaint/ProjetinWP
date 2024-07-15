@@ -349,6 +349,15 @@
     color: var(--btn-color);
     border-left: 4px solid var(--btn-color);
 }
+.tamanhoNavLat{
+    width: 50px;
+}
+.ocutarElemnt{
+    display: none;
+}
+.leftPosition{
+    left: 50px;
+}
 /*===== MAIN PAGE =====*/
 .title-padrao{
     font-size: 1.9rem;

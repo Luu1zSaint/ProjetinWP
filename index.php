@@ -54,24 +54,36 @@
     <nav id="nav-home-lat" class="">
         <ul id="recolher-menu" class="nav-menu ">
             <li id="menu-externo" class="nav-menu-item classRel">
-                <a onclick="mostrarMenu()" class="menu-item" href="?pag=painel">
-                <i class='bx bx-message-square-add'></i>Painel</a>
-                <ul id="menu-oculto" class="nav-menu-interno classAbs">
+                <a class="menu-item" href="?pag=painel">
+                    <i class='bx bx-message-square-add'></i>
+                    <span class="spanMsg" >Painel</span>
+                </a>
+                <ul class="nav-menu-interno classAbs">
                     <li><a href="?pag=painel">Início</a></li>
                     <li><a href="?pag=sobre">Sobre o WordPress</a></li>
                 </ul>
             </li>
             <li id="menu-externo" class="nav-menu-item classRel">
-                <a onclick="mostrarMenu()" class="menu-item" href="?pag=usuarios">
-                    <i class='bx bx-message-square-add'></i>Usuário</a>
-                <ul id="menu-oculto" class="nav-menu-interno classAbs">
+                <a class="menu-item" href="?pag=usuarios">
+                    <i class='bx bx-message-square-add'></i>
+                    <span class="spanMsg" >Usuário</span>
+                </a>
+                <ul class="nav-menu-interno classAbs">
                     <li><a href="?pag=usuarios">Todos os Usuários</a></li>
                     <li><a href="?pag=perfil">Perfil</a></li>
                 </ul>
             </li>
             <li id="menu-externo" class="nav-menu-item classRel">
-                <a onclick="mostrarMenu()" class="menu-item" href="?pag=configuracao">
-                    <i class='bx bx-message-square-add'></i>Configurações</a>
+                <a class="menu-item" href="?pag=configuracao">
+                    <i class='bx bx-message-square-add'></i>
+                    <span class="spanMsg" >Configurações</span>
+                </a>
+            </li>
+            <li id="menu-externo" class="nav-menu-item classRel">
+                <a onclick="ocutarMenu()" class="menu-item" href="#">
+                    <i class='bx bx-message-square-add'></i>
+                    <span class="spanMsg" >Recolher menu</span>
+                </a>
             </li>
         </ul>
     </nav>
