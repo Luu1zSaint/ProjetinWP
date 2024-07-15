@@ -1,3 +1,10 @@
+<?php
+include_once('config/conn.php');
+session_start();
+if(!isset($_SESSION['ID'])){
+    header('location: pages/login.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -12,25 +19,9 @@
         <div class="header-menu">
             <ul class="header-menu-esq">
                 <li class="header-item">
-                    <a href="?pag=sobre"><i class='bx bxl-wordpress'></i></a>
+                    <a href="?pag=painel"><i class='bx bxl-wordpress'></i></a>
                     <ul class="menu-interno">
                         <li><a href="?pag=sobre">Sobre o WordPress</a></li>
-                    </ul>
-                </li>
-                <li class="header-item">
-                    <a href="?pag=painel"><i class='bx bx-home'></i>ProjetinWP</a>
-                    <ul class="menu-interno">
-                        <li><a href="?pag=painel">Visitar site</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#"><i class='bx bx-message-square-dots'></i>0</a>
-                </li>
-                <li class="header-item">
-                    <a href="?pag=usuarios">
-                        <i class='bx bx-message-square-add'></i>Novo</a>
-                    <ul class="menu-interno">
-                        <li><a href="?pag=usuarios">Usuário</a></li>
                     </ul>
                 </li>
             </ul>
@@ -44,7 +35,7 @@
                             <img src="assets/img/user-avatar.png" alt="user-avatar">
                             <div class="sub-menu-link">
                                 <a href="?pag=configuracao">User<br>Editar perfil</a>
-                                <a href="logout.php">Sair</a>
+                                <a href="config/logout.php">Sair</a>
                             </div>
                         </div>
                     </div>
@@ -64,19 +55,21 @@
                 </ul>
             </li>
             <li id="menu-externo" class="nav-menu-item classRel">
-                <a class="menu-item" href="?pag=usuarios">
+                <a class="menu-item" href=<?= (false)? "?pag=usuarios": "?pag=perfil"; ?>>
                     <i class='bx bx-message-square-add'></i>
                     <span class="spanMsg" >Usuário</span>
                 </a>
                 <ul class="nav-menu-interno classAbs">
+                    <?php if(false): ?>
                     <li><a href="?pag=usuarios">Todos os Usuários</a></li>
+                    <?php endif; ?>
                     <li><a href="?pag=perfil">Perfil</a></li>
                 </ul>
             </li>
             <li id="menu-externo" class="nav-menu-item classRel">
                 <a class="menu-item" href="?pag=configuracao">
                     <i class='bx bx-message-square-add'></i>
-                    <span class="spanMsg" >Configurações</span>
+                    <span class="spanMsg" > Editar Perfil</span>
                 </a>
             </li>
             <li id="menu-externo" class="nav-menu-item classRel">

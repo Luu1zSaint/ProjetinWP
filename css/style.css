@@ -115,51 +115,6 @@
 .footer-info p a:hover{
     color: var(--hover-color);
 }
-/*===== REGISTER PAGE =====*/
-#container-register{
-    background-color: var(--bg-color);
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-}
-#register{
-    height: 510px;
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-#register h1 img{
-    height: 84px;
-    width: 84px;
-    margin: 20px 0px;
-}
-.form-register{
-    background-color: #fff;
-    width: 320px;
-    padding: 20px;
-    border: 1px solid var(--border-color);
-}
-.user-input-btn{
-    margin-top: 15px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: end;
-}
-.user-input-btn input[type=submit]{
-    height: 34px;
-    width: 69px;
-    background-color: var(--btn-color);
-    color: #fff;
-    outline: none;
-    border: none;
-    border-radius: 3px;
-}
-.user-input-btn input[type=submit]:hover{
-    background-color: var(--hover-color);
-    cursor: pointer;
-}
 /*===== HOME PAGE =====*/
 #container-home{
     height: 100vh;
@@ -381,40 +336,7 @@
     font-size: 3rem;
     font-weight: 400;
 }
-.main-painel .bv-links-painel{
-    background-color: #fff;
-    height: 225px;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-}
-.main-painel .bv-links-painel div{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 20px;
-    height: 100%;
-    width: 480px;
-}
-.main-painel .bv-links-painel h4{
-    font-size: 1.4rem;
-    font-weight: 400;
-    margin-bottom: 10px;
-}
-.main-painel .bv-links-painel p{
-    font-size: .9rem;
-    font-weight: 400;
-    margin-bottom: 10px;
-    color: var(--font-color);
-}
-.main-painel .bv-links-painel a{
-    font-size: .9rem;
-    font-weight: 400;
-    color: var(--btn-color);
-}
-.main-painel .bv-links-painel a:hover{
-    color: var(--hover-color);
-}
+
 /*===== USUARIOS =====*/
 .main-usuarios{
     padding: 20px;
