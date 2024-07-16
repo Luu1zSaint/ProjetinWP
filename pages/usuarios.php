@@ -37,7 +37,6 @@
                         <th>Nome</th>
                         <th>E-mail</th>
                         <th>Função</th>
-                        <th>Posts</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -47,7 +46,6 @@
                         <td><a href="#">Nome</a></td>
                         <td><a href="#">usuario@gmail.com</a></td>
                         <td>Adimininistrado</td>
-                        <td>1</td>
                     </tr>
                 </tbody>
                 <tfoot class="tfoot-usuarios">
@@ -57,7 +55,6 @@
                         <th>Nome</th>
                         <th>E-mail</th>
                         <th>Função</th>
-                        <th>Posts</th>
                     </tr>
                 </tfoot>
             </table>

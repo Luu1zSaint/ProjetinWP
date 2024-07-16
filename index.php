@@ -55,12 +55,12 @@ if(!isset($_SESSION['ID'])){
                 </ul>
             </li>
             <li id="menu-externo" class="nav-menu-item classRel">
-                <a class="menu-item" href=<?= (false)? "?pag=usuarios": "?pag=perfil"; ?>>
+                <a class="menu-item" href=<?= ($_SESSION['cargo'] == 'adm')? "?pag=usuarios": "?pag=perfil"; ?>>
                     <i class='bx bx-message-square-add'></i>
                     <span class="spanMsg" >Usuário</span>
                 </a>
                 <ul class="nav-menu-interno classAbs">
-                    <?php if(false): ?>
+                    <?php if($_SESSION['cargo'] == 'adm'): ?>
                     <li><a href="?pag=usuarios">Todos os Usuários</a></li>
                     <?php endif; ?>
                     <li><a href="?pag=perfil">Perfil</a></li>

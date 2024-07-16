@@ -3,14 +3,19 @@ $session = false;
 if(isset($_SESSION['ID'])){
     $session = true; 
     include_once('config/conn.php');
+    include_once('config/verifica.php');
 }else{
     include_once('../config/conn.php');
+    include_once('../config/verifica.php');
     $_SESSION['cargo'] = 'user';
 }
-if($_SERVER['REQUEST_METHOD'] == "post"){
-    echo 'ppka';
-}else{
-    echo 'piroca';
+if(!empty($_POST['nome']) && 
+!empty($_POST['data-nasc']) && 
+!empty($_POST['email']) && 
+!empty($_POST['pass'])){
+    
+    $resultVerifica = verifica($_POST);
+    var_dump($resultVerifica);
 }
 ?>
 <!DOCTYPE html>
