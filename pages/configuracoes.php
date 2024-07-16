@@ -10,12 +10,20 @@ if(isset($_SESSION['ID'])){
     $_SESSION['cargo'] = 'user';
 }
 if(!empty($_POST['nome']) && 
-!empty($_POST['data-nasc']) && 
-!empty($_POST['email']) && 
-!empty($_POST['pass'])){
-    
-    $resultVerifica = verifica($_POST);
-    var_dump($resultVerifica);
+    !empty($_POST['dataNasc']) && 
+    !empty($_POST['email']) && 
+    !empty($_POST['pass'])
+    ){
+        $resultVerifica = verifica($_POST);
+        if($resultVerifica){
+            foreach($_POST as $key => $value){
+                $_SESSION[$key] = $value;
+            }
+            header('location: ../config/infoUser.php');
+        }
+        echo 'Ops algo deu Errado!';
+}else{
+    echo 'Preencha todos os campos!';
 }
 ?>
 <!DOCTYPE html>
@@ -43,7 +51,7 @@ if(!empty($_POST['nome']) &&
                     <div class="div-title">
                         <label class="title" for="data-nasc">Data de Nascimento</label>
                     </div>
-                    <input class="input-area" type="date" name="data-nasc" id="" value="<?= ($session)? $_SESSION['dataNasc']: '';?>">
+                    <input class="input-area" type="date" name="dataNasc" max="<?= date("Y-m-d");?>" value="<?= ($session)? $_SESSION['dataNasc']: '';?>">
                 </div>
             </div>
             <div class="info-contato">

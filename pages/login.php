@@ -1,18 +1,19 @@
 <?php
 include_once('../config/conn.php');
+include_once('../config/infoUser.php');
+include_once('../config/verifica.php');
 $flagErrorCampos = false;
 $flagErrorUser = false;
+var_dump($_POST);
 if(!empty($_POST['email']) && !empty($_POST['pass'])){
     $email = $_POST['email'];
     $pass = $_POST['pass'];
     $email = $conn->real_escape_string($email);
     $pass = $conn->real_escape_string($pass);
-    $sql = "SELECT ID, nome, dataNasc, email, cargo FROM $table WHERE email = '$email' AND pass = '$pass';";
-    $resultQuery = $conn->query($sql);
-    if($resultQuery->num_rows == 1){
-        session_start();
-        $userInfo = $resultQuery->fetch_assoc();
-        foreach($userInfo as $key => $value){
+    $resultCheck = checkLogin($email, $pass);
+    if($resultCheck){
+        $infoUser = infoSelect($email);
+        foreach($infoUser as $key => $value){
             $_SESSION[$key] = $value;
         }
         header('location: ../index.php');

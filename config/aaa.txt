@@ -1,0 +1,9 @@
+$nome = $_SESSION['nome'];
+$data = $_SESSION['dataNasc'];
+$email = $_SESSION['email'];
+$pass = md5($_SESSION['pass']);
+
+$sqlInsert = "INSERT INTO $table(nome, dataNasc, email, pass) VALUES('$nome', '$data', '$email', '$pass');";
+$conn->Query($sqlInsert);
+$sqlSelect = "SELECT ID, nome, dataNasc, email, cargo FROM $table WHERE email = '$email';";
+$result = $conn->Query($sqlSelect);
