@@ -513,3 +513,22 @@
     padding: 10px 20px;
     color: var(--font-color);
 }
+/*===== PERFIL PAGE =====*/
+.container-perfil{
+    padding: 20px;
+    height: 70%;
+}
+.container-perfil .perfil-infos{
+    height: 100%;
+}
+.perfil-infos h4{
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.perfil-infos p{
+    font-size: 1.2rem;
+}
+.perfil-infos hr{
+    margin-bottom: 20px;
+}

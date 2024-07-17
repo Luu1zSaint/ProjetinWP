@@ -2,6 +2,7 @@
 include_once('../config/conn.php');
 include_once('../config/infoUser.php');
 include_once('../config/verifica.php');
+session_start();
 $flagErrorCampos = false;
 $flagErrorUser = false;
 
@@ -11,9 +12,7 @@ if(!empty($_POST['email']) && !empty($_POST['pass'])){
     $resultCheck = checkLogin($email, $pass);
     if($resultCheck){
         $infoUser = infoSelect($email);
-        foreach($infoUser as $key => $value){
-            $_SESSION[$key] = $value;
-        }
+        header('location: ../index.php');
     }else{
         $flagErrorUser = true;
     }
@@ -61,4 +60,5 @@ if(!empty($_POST['email']) && !empty($_POST['pass'])){
         </div>
     </div>
 </body>
+<script src="../js/scripts.js"></script>
 </html>

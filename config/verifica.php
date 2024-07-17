@@ -1,24 +1,16 @@
 <?php
 include('conn.php');
 function verifica($arr){
-    function verificaLen($world){
-        $world = strlen($world);
-        if($world > 3 && $world <= 27){
-            return true;
-        }
-        return false;
-    }
     function verificaPass($pass, $pass2){
         if($pass === $pass2){
             return true;
         }
         return false;
     }
-    $veriNome = verificaLen($arr['nome']);
     $veriPass2 = verificaPass($arr['pass'], $arr['pass2']);
     $veriEmail = filter_var($arr['email'], FILTER_VALIDATE_EMAIL);
 
-    if($veriEmail && $veriNome && $veriPass2){
+    if($veriEmail && $veriPass2){
         return true;
     }
     return false;

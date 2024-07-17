@@ -42,7 +42,9 @@
                 <tbody>
                     <tr>
                         <td><input type="checkbox" name="check-usuarios-table-td" id=""></td>
-                        <td><a href="#">Usuário</a></td>
+                        <td>
+                            <a href="#">Usuário</a>         
+                        </td>
                         <td><a href="#">Nome</a></td>
                         <td><a href="#">usuario@gmail.com</a></td>
                         <td>Adimininistrado</td>

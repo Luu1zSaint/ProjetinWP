@@ -1,12 +1,14 @@
 <?php
-$session = false; 
+$session = false;
+$flagErrorAtt = false;
+$flagErrorCampos = false;
 if(isset($_SESSION['ID'])){
     $session = true; 
     include_once('config/conn.php');
     include_once('config/verifica.php');
     include_once('config/infoUser.php');
-
 }else{
+    session_start();
     include_once('../config/conn.php');
     include_once('../config/verifica.php');
     include_once('../config/infoUser.php');
@@ -23,11 +25,14 @@ if(!empty($_POST['nome']) &&
                 $_SESSION[$key] = $value;
             }
             $resultInsert = insertUser($_SESSION);
-            echo $resultInsert;
+            if($resultInsert){
+                $infoUser = infoSelect($_SESSION['email']);
+                header('location: ../index.php');
+            }
         }
-        echo 'Ops algo deu Errado!';
+        $flagErrorAtt = true;
 }else{
-    echo 'Preencha todos os campos!';
+    $flagErrorCampos = true;
 }
 ?>
 <!DOCTYPE html>
@@ -96,6 +101,12 @@ if(!empty($_POST['nome']) &&
                     <input class="input-area" type="password" name="pass2" id="">
                 </div>
             </div>
+            <?php if($flagErrorAtt): ?>
+                <p>Ops algo deu Errado!</p>
+            <?php endif; ?>
+            <?php if($flagErrorCampos): ?>
+                <p>Preencha todos os campos!</p>
+            <?php endif; ?>
             <input type="submit" value="<?= ($session)? 'Atualizar perfil': 'Cadastrar-se';?>">
         </form>
     </main>
