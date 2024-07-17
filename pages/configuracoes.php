@@ -4,9 +4,12 @@ if(isset($_SESSION['ID'])){
     $session = true; 
     include_once('config/conn.php');
     include_once('config/verifica.php');
+    include_once('config/infoUser.php');
+
 }else{
     include_once('../config/conn.php');
     include_once('../config/verifica.php');
+    include_once('../config/infoUser.php');
     $_SESSION['cargo'] = 'user';
 }
 if(!empty($_POST['nome']) && 
@@ -19,7 +22,8 @@ if(!empty($_POST['nome']) &&
             foreach($_POST as $key => $value){
                 $_SESSION[$key] = $value;
             }
-            header('location: ../config/infoUser.php');
+            $resultInsert = insertUser($_SESSION);
+            echo $resultInsert;
         }
         echo 'Ops algo deu Errado!';
 }else{

@@ -4,19 +4,16 @@ include_once('../config/infoUser.php');
 include_once('../config/verifica.php');
 $flagErrorCampos = false;
 $flagErrorUser = false;
-var_dump($_POST);
+
 if(!empty($_POST['email']) && !empty($_POST['pass'])){
     $email = $_POST['email'];
     $pass = $_POST['pass'];
-    $email = $conn->real_escape_string($email);
-    $pass = $conn->real_escape_string($pass);
     $resultCheck = checkLogin($email, $pass);
     if($resultCheck){
         $infoUser = infoSelect($email);
         foreach($infoUser as $key => $value){
             $_SESSION[$key] = $value;
         }
-        header('location: ../index.php');
     }else{
         $flagErrorUser = true;
     }
