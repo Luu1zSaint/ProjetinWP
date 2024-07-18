@@ -1,3 +1,10 @@
+<?php
+include_once('config/conn.php');
+$sqlSelect = "SELECT ID, nome, dataNasc, email, cargo FROM $table;";
+$result = $conn->Query($sqlSelect);
+$result = $result->fetch_all();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,9 +24,6 @@
                     <select name="data" id="">
                         <option value="all-dates">Todas as datas</option>
                     </select>
-                    <select name="categoria" id="">
-                        <option value="all-categorias">Todas as categorias</option>
-                    </select>
                     <input type="submit" value="Filtrar">
                 </div>
                 <div class="container-form-dir">
@@ -32,31 +36,38 @@
             <table class="table-usuarios">
                 <thead>
                     <tr>
-                        <th><input type="checkbox" name="check-usuarios-table" id=""></th>
-                        <th><a href="#">Nome de usuário</a></th>
+                        <th>ID</th>
                         <th>Nome</th>
+                        <th>Data de Nasc.</th>
                         <th>E-mail</th>
                         <th>Função</th>
+                        <th>Editar</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td><input type="checkbox" name="check-usuarios-table-td" id=""></td>
-                        <td>
-                            <a href="#">Usuário</a>         
+                <?php foreach($result as $arr): ?>
+                    <tr class="tbody-content">
+                        <td><?= $arr[0];?></td>
+                        <td><?= $arr[1];?></td>
+                        <td><?= $arr[2];?></td>
+                        <td><?= $arr[3];?></td>
+                        <td><?= $arr[4];?></td>
+                        <td class="column-row">
+                            <a class="btn-edit" href="?pag=configuracao&user=<?=$arr[0];?>"><span>Editar</span></a>
+                            <a class="btn-edit" href="config/delete.php?user=<?=$arr[0];?>"><span>Excluir</span></a>
                         </td>
-                        <td><a href="#">Nome</a></td>
-                        <td><a href="#">usuario@gmail.com</a></td>
-                        <td>Adimininistrado</td>
                     </tr>
+                <?php endforeach; ?>
                 </tbody>
                 <tfoot class="tfoot-usuarios">
                     <tr>
-                        <th><input type="checkbox" name="check-usuarios-table" id=""></th>
-                        <th><a href="#">Nome de usuário</a></th>
+                        <th>ID</th>
                         <th>Nome</th>
+                        <th>Data de Nasc.</th>
                         <th>E-mail</th>
                         <th>Função</th>
+                        <th>Editar</th>
                     </tr>
                 </tfoot>
             </table>
@@ -66,10 +77,7 @@
                 <div class="container-form-esq">
                     <select name="data" id="">
                         <option value="all-dates">Todas as datas</option>
-                    </select>
-                    <select name="categoria" id="">
-                        <option value="all-categorias">Todas as categorias</option>
-                    </select>
+                    </select> 
                     <input type="submit" value="Filtrar">
                 </div>
             </form>

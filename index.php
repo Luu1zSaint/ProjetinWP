@@ -3,7 +3,7 @@ include_once('config/conn.php');
 session_start();
 if(!isset($_SESSION['ID'])){
     header('location: pages/login.php');
-}
+} 
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -69,7 +69,7 @@ if(!isset($_SESSION['ID'])){
             <li id="menu-externo" class="nav-menu-item classRel">
                 <a class="menu-item" href="?pag=configuracao">
                     <i class='bx bx-message-square-add'></i>
-                    <span class="spanMsg" > Editar Perfil</span>
+                    <span class="spanMsg">Editar Perfil</span>
                 </a>
             </li>
             <li id="menu-externo" class="nav-menu-item classRel">

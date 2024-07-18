@@ -1,3 +1,6 @@
+<?php
+include_once('config/conn.php');
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -20,7 +23,7 @@
             <p><?php
                 $data = explode('-', $_SESSION['dataNasc']);
 
-                printf("Dia: %d, de %s, de %u",$data[2], $data[1], $data[0]);
+                printf("Dia: %d, do %s, de %u",$data[2], $data[1], $data[0]);
             ?></p>
             <hr>
             <h4>Cargo: </h4>

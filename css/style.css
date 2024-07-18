@@ -409,7 +409,6 @@
     margin-left: 10px;
 }
 .main-usuarios .table-usuarios tbody{
-    height: 57px;
     text-align: start;
     background-color: var(--bg-color);
 }
@@ -424,8 +423,31 @@
     border-bottom: 1px solid var(--border-color);
     border-top: 1px solid var(--border-color);
 }
+.table-usuarios tbody .btn-edit{
+    display: inline-block;
+    height: 30px;
+    width: 60px;
+    border: 1px solid var(--btn-color);
+    color: var(--btn-color);
+    text-decoration: none;
+    border-radius: 3px;
+    text-align: center;
+}
+.table-usuarios .btn-edit:hover{
+    border: 1px solid var(--hover-color);
+    color: var(--hover-color);
+}
+.table-usuarios tbody .btn-edit span{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .form-usuarios-bottom{
     margin-top: 20px;
+}
+.table-usuarios .tbody-content td{
+    height: 57px;
 }
 /*===== CONFIGURACAO =====*/
 #main-config{
