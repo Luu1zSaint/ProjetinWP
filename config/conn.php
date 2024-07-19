@@ -8,5 +8,4 @@ $conn = new mysqli($host, $user, $passdb, $db);
 if($conn->connect_errno){
     echo "Erro de conexão! Error: ".mysqli_connect_error(); 
 }
-
 ?>

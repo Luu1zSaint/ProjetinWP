@@ -1,18 +1,2 @@
-
-
-    $email = $conn->real_escape_string($email);
-    $pass = $conn->real_escape_string($pass);
-
-
-    $email = $_POST['email'];
-    $pass = $_POST['pass'];
-    $resultCheck = checkLogin($email, $pass);
-    if($resultCheck){
-        $infoUser = infoSelect($email);
-        foreach($infoUser as $key => $value){
-            $_SESSION[$key] = $value;
-        }
-        header('location: ../index.php');
-    }
-
-
+$email = $conn->real_escape_string($email);
+$pass = $conn->real_escape_string($pass);

@@ -50,12 +50,12 @@ $result = $result->fetch_all();
                     <tr class="tbody-content">
                         <td><?= $arr[0];?></td>
                         <td><?= $arr[1];?></td>
-                        <td><?= $arr[2];?></td>
+                        <td><?= date('d/m/Y', strtotime($arr[2]));?></td>
                         <td><?= $arr[3];?></td>
                         <td><?= $arr[4];?></td>
                         <td class="column-row">
-                            <a class="btn-edit" href="?pag=configuracao&user=<?=$arr[0];?>"><span>Editar</span></a>
-                            <a class="btn-edit" href="config/delete.php?user=<?=$arr[0];?>"><span>Excluir</span></a>
+                            <a class="btn-edit" href="configuracoes?ID=<?=$arr[0];?>"><span>Editar</span></a>
+                            <a class="btn-edit" href="config/delete.php?ID=<?=$arr[0];?>"><span>Excluir</span></a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

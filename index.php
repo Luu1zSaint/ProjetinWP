@@ -3,7 +3,9 @@ include_once('config/conn.php');
 session_start();
 if(!isset($_SESSION['ID'])){
     header('location: pages/login.php');
-} 
+}
+$rota = explode('/', $_GET['url'] ?? 'painel');
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -19,22 +21,22 @@ if(!isset($_SESSION['ID'])){
         <div class="header-menu">
             <ul class="header-menu-esq">
                 <li class="header-item">
-                    <a href="?pag=painel"><i class='bx bxl-wordpress'></i></a>
+                    <a href="painel"><i class='bx bxl-wordpress'></i></a>
                     <ul class="menu-interno">
-                        <li><a href="?pag=sobre">Sobre o WordPress</a></li>
+                        <li><a href="sobre">Sobre o WordPress</a></li>
                     </ul>
                 </li>
             </ul>
         </div>
         <div class="header-menu-dir">
-                <a class="menu-dir" href="?pag=configuracao">
+                <a class="menu-dir" href="configuracao">
                     <span>Olá, User</span>
                     <img src="assets/img/user-avatar.png" alt="user-avatar">
                     <div class="sub-menu-dir">
                         <div class="sub-menu-container">
                             <img src="assets/img/user-avatar.png" alt="user-avatar">
                             <div class="sub-menu-link">
-                                <a href="?pag=configuracao">User<br>Editar perfil</a>
+                                <a href="configuracoes">User<br>Editar perfil</a>
                                 <a href="config/logout.php">Sair</a>
                             </div>
                         </div>
@@ -45,29 +47,29 @@ if(!isset($_SESSION['ID'])){
     <nav id="nav-home-lat" class="">
         <ul id="recolher-menu" class="nav-menu ">
             <li id="menu-externo" class="nav-menu-item classRel">
-                <a class="menu-item" href="?pag=painel">
+                <a class="menu-item" href="painel">
                     <i class='bx bx-message-square-add'></i>
                     <span class="spanMsg" >Painel</span>
                 </a>
                 <ul class="nav-menu-interno classAbs">
-                    <li><a href="?pag=painel">Início</a></li>
-                    <li><a href="?pag=sobre">Sobre o WordPress</a></li>
+                    <li><a href="painel">Início</a></li>
+                    <li><a href="sobre">Sobre o WordPress</a></li>
                 </ul>
             </li>
             <li id="menu-externo" class="nav-menu-item classRel">
-                <a class="menu-item" href=<?= ($_SESSION['cargo'] == 'adm')? "?pag=usuarios": "?pag=perfil"; ?>>
+                <a class="menu-item" href=<?= ($_SESSION['cargo'] == 'adm')? "usuarios": "perfil"; ?>>
                     <i class='bx bx-message-square-add'></i>
                     <span class="spanMsg" >Usuário</span>
                 </a>
                 <ul class="nav-menu-interno classAbs">
                     <?php if($_SESSION['cargo'] == 'adm'): ?>
-                    <li><a href="?pag=usuarios">Todos os Usuários</a></li>
+                    <li><a href="usuarios">Todos os Usuários</a></li>
                     <?php endif; ?>
-                    <li><a href="?pag=perfil">Perfil</a></li>
+                    <li><a href="perfil">Perfil</a></li>
                 </ul>
             </li>
             <li id="menu-externo" class="nav-menu-item classRel">
-                <a class="menu-item" href="?pag=configuracao">
+                <a class="menu-item" href="configuracoes">
                     <i class='bx bx-message-square-add'></i>
                     <span class="spanMsg">Editar Perfil</span>
                 </a>
@@ -83,29 +85,13 @@ if(!isset($_SESSION['ID'])){
     <div id="home-content">
         <main id="main">
             <?php
-            switch ($_GET['pag']) {
-                case 'painel':
-                    include_once("pages/painel.php");
-                    break;
-                case 'sobre':
-                    include_once("pages/sobre.php");
-                    break;
-                case 'perfil':
-                    include_once("pages/perfil.php");
-                    break;
-                case 'usuarios':
-                    include_once("pages/usuarios.php");
-                    break;
-                case 'configuracao':
-                    include_once("pages/configuracoes.php");
-                    break; 
-                    default:
-                include_once("pages/painel.php");
-                    break;
-            }?>
+            if(file_exists('pages/'."$rota[0]".'.php')){
+                include_once('pages/'."$rota[0]".'.php');
+            }
+            ?>
         </main>
         <footer id="footer">
-            <p><em>Obrigado por criar com <a href="?pag=painel">WordPress.</a></em></p>
+            <p><em>Obrigado por criar com <a href="painel">WordPress.</a></em></p>
             <p><em>Versão V.0.0</em></p>
         </footer>
     </div>

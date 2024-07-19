@@ -5,19 +5,20 @@ include_once('../config/verifica.php');
 session_start();
 $flagErrorCampos = false;
 $flagErrorUser = false;
-
-if(!empty($_POST['email']) && !empty($_POST['pass'])){
-    $email = $_POST['email'];
-    $pass = $_POST['pass'];
-    $resultCheck = checkLogin($email, $pass);
-    if($resultCheck){
-        $infoUser = infoSelect($email);
-        header('location: ../index.php');
+if($_SERVER['REQUEST_METHOD'] === 'POST'){
+    if(!empty($_POST['email']) && !empty($_POST['pass'])){
+        $email = $_POST['email'];
+        $pass = $_POST['pass'];
+        $resultCheck = checkLogin($email, $pass);
+        if($resultCheck){
+            $infoUser = infoSelect($email);
+            header('location: ../index.php');
+        }else{
+            $flagErrorUser = true;
+        }
     }else{
-        $flagErrorUser = true;
+        $flagErrorCampos = true;
     }
-}else{
-    $flagErrorCampos = true;
 }
 ?>
 <!DOCTYPE html>

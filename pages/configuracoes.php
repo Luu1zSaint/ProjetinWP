@@ -8,11 +8,13 @@ if(isset($_SESSION['ID'])){
     include_once('config/conn.php');
     include_once('config/verifica.php');
     include_once('config/infoUser.php');
+    include_once('config/email.php');
 }else{
     session_start();
     include_once('../config/conn.php');
     include_once('../config/verifica.php');
     include_once('../config/infoUser.php');
+    include_once('../config/email.php');
     $_SESSION['cargo'] = 'user';
 }
 if($_SERVER['REQUEST_METHOD'] === 'POST' && empty($_SESSION['ID']) && empty($_GET)){
@@ -36,27 +38,31 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && empty($_SESSION['ID']) && empty($_GE
         $flagErrorCampos = true;
     }
 }
-if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_SESSION['ID'])){
+if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_SESSION['ID']) && !isset($_GET['ID'])){ //att perfil
     $resulInfo = allInfo($_SESSION['ID']);
     $resultUpdate = updateUser($_POST, $resulInfo);
     if($resultUpdate){
-        $flagSuccessUpdate = true;;
+        $flagSuccessUpdate = true;
+        $sendEmail = sendEmail($resulInfo);
     }
 }
-if(isset($_GET['user'])){
-    $id = $_GET['user'];
+if(isset($_GET['ID'])){
+    $id = $_GET['ID'];
     $sqlSelect = "SELECT *  FROM $table WHERE ID = '$id';";
     $result = $conn->Query($sqlSelect);
     $result = $result->fetch_assoc();
+    $item = [];
     foreach((array)$result as $key => $value){
-        $item[$key];
+        $item[$key] = $value;
     }
 }
-if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($item)){
+if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($item)){ //att perfil pelo adm
     $resultUpdate = updateUser($_POST, $item);
     if($resultUpdate){
         $flagSuccessUpdate = true;
     }
+    $sendEmail = sendEmail($item);
+    echo $sendEmail;
 }
 ?>
 <!DOCTYPE html>
@@ -79,7 +85,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($item)){
                     <div class="div-title"><label class="title" for="nome">Nome</label> 
                 </div>
                     <input class="input-area" type="text" name="nome" id="" placeholder="<?php
-                        if(isset($_GET['user'])){
+                        if(isset($_GET['ID'])){
                             echo $item['nome'];
                         }elseif($session){
                             echo $_SESSION['nome'];
@@ -93,7 +99,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($item)){
                         <label class="title" for="data-nasc">Data de Nascimento</label>
                     </div>
                     <input class="input-area" type="date" name="dataNasc" max="<?= date("Y-m-d");?>" value="<?php
-                        if(isset($_GET['user'])){
+                        if(isset($_GET['ID'])){
                             echo $item['dataNasc'];
                         }elseif($session){
                             echo $_SESSION['dataNasc'];
@@ -110,7 +116,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($item)){
                         <label class="title" for="amail">E-mail</label>
                     </div>
                     <input class="input-area" type="email" name="email" id="" placeholder="<?php
-                        if(isset($_GET['user'])){
+                        if(isset($_GET['ID'])){
                             echo $item['email'];
                         }elseif($session){
                             echo $_SESSION['email'];
