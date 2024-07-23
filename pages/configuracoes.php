@@ -73,18 +73,20 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($item)){ //att perfil pelo adm
     <link rel="stylesheet"  href=<?= ($session)? "css/style.css": "../css/style.css"; ?>>
     <title>ProjetinWP</title>
 </head>
-<body>
+<body id="<?= ($session)? "": "body-cadastro"; ?>">
     <header>
-        <h1 class="title-padrao"><?= ($session)? "Editar Perfil": "Cadastro"; ?></h1>
+        <h1 class="title-padrao">Editar Perfil</h1>
     </header>
-    <main id="main-config">
-        <form class="form-config" method="post">
+    <main id="<?= ($session)? "main-config": "main-cadastro"; ?>">
+        <h1><?= (!$session)? "<img src='../assets/img/wordpress-logo.svg' alt='wordpress-logo'>": ""; ?></h1>
+    
+        <form class="<?= ($session)? "form-config": "form-config-cad";?>" method="post">
             <div class="nome">
                 <h4>Informações Pessoais</h4>
                 <div class="p-nome d-flex">
                     <div class="div-title"><label class="title" for="nome">Nome</label> 
                 </div>
-                    <input class="input-area" type="text" name="nome" id="" placeholder="<?php
+                    <input class="input-area" type="text" name="nome"  value="<?php
                         if(isset($_GET['ID'])){
                             echo $item['nome'];
                         }elseif($session){
@@ -115,7 +117,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($item)){ //att perfil pelo adm
                     <div class="div-title">
                         <label class="title" for="amail">E-mail</label>
                     </div>
-                    <input class="input-area" type="email" name="email" id="" placeholder="<?php
+                    <input class="input-area" type="email" name="email"  value="<?php
                         if(isset($_GET['ID'])){
                             echo $item['email'];
                         }elseif($session){
@@ -141,23 +143,21 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($item)){ //att perfil pelo adm
                 </div>
             </div>
             <?php endif; ?>
-            <?php if(!isset($_SESSION['ID'])): ?>
             <div class="info-contato">
                 <h4>Informações de login</h4>
                 <div class="email d-flex">
                     <div class="div-title">
                         <label class="title" for="pass">Senha</label>
                     </div>
-                    <input class="input-area" type="password" name="pass" id="">
+                    <input class="input-area" type="password" name="pass" >
                 </div>
                 <div class="email d-flex">
                     <div class="div-title">
                         <label class="title" for="pass2">Confirmar senha</label>
                     </div>
-                    <input class="input-area" type="password" name="pass2" id="">
+                    <input class="input-area" type="password" name="pass2">
                 </div>
             </div>
-            <?php endif; ?>
             <?php if($flagErrorAtt): ?>
                 <p>Ops algo deu Errado!</p>
             <?php endif; ?>

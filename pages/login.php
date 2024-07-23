@@ -41,11 +41,11 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         <form class="form-login" method="post">
             <div class="user-input-name div-input">
                 <p>Endereço de e-mail</p>
-                <input class="style-input" type="email" name="email" id="">
+                <input class="style-input style-input-mobile" type="email" name="email" id="">
             </div>
             <div class="user-input-pass div-input">
                 <p>Senha</p>
-                <input class="style-input" type="password" name="pass" id="">
+                <input class="style-input style-input-mobile" type="password" name="pass" id="">
             </div>
             <div class="user-input-btn-check div-input">
                 <div>
@@ -56,7 +56,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
             </div>
         </form>
         <div class="footer-info">
-            <p class="perdeu-senha"><a href="#"></a></p>
+            <p class="perdeu-senha"><a href="#">Perdeu a senha?</a></p>
             <p class="ir-para"><a href="configuracoes.php">Cadastrar-se</a></p>
         </div>
     </div>

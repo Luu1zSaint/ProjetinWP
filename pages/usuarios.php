@@ -38,23 +38,24 @@ $result = $result->fetch_all();
                     <tr>
                         <th>ID</th>
                         <th>Nome</th>
-                        <th>Data de Nasc.</th>
+                        <th class="info-none-mobile">Data de Nasc.</th>
                         <th>E-mail</th>
-                        <th>Função</th>
-                        <th>Editar</th>
+                        <th class="info-none-mobile">Função</th>
+                        <th class="column-btns">Editar</th>
                         <th></th>
                     </tr>
+                    <p>Para editar ou excluir, clique no nome do usuário!</p>
                 </thead>
                 <tbody>
                 <?php foreach($result as $arr): ?>
                     <tr class="tbody-content">
                         <td><?= $arr[0];?></td>
-                        <td><?= $arr[1];?></td>
-                        <td><?= date('d/m/Y', strtotime($arr[2]));?></td>
+                        <td><a href="configuracoes?ID=<?=$arr[0];?>"><?= $arr[1];?></a></td>
+                        <td class="info-none-mobile"><?= date('d/m/Y', strtotime($arr[2]));?></td>
                         <td><?= $arr[3];?></td>
-                        <td><?= $arr[4];?></td>
-                        <td class="column-row">
-                            <a class="btn-edit" href="configuracoes?ID=<?=$arr[0];?>"><span>Editar</span></a>
+                        <td class="info-none-mobile"><?= $arr[4];?></td>
+                        <td class="column-btns">
+                            <a class="btn-edit edit" href="configuracoes?ID=<?=$arr[0];?>"><span>Editar</span></a>
                             <a class="btn-edit" href="config/delete.php?ID=<?=$arr[0];?>"><span>Excluir</span></a>
                         </td>
                     </tr>
@@ -64,10 +65,10 @@ $result = $result->fetch_all();
                     <tr>
                         <th>ID</th>
                         <th>Nome</th>
-                        <th>Data de Nasc.</th>
+                        <th class="info-none-mobile">Data de Nasc.</th>
                         <th>E-mail</th>
-                        <th>Função</th>
-                        <th>Editar</th>
+                        <th class="info-none-mobile">Função</th>
+                        <th class="column-btns">Editar</th>
                     </tr>
                 </tfoot>
             </table>

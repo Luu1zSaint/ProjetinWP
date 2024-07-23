@@ -189,7 +189,7 @@
 }
 .header-menu-esq .header-item{
     position: relative;
-    display: block;
+    display: none;
     z-index: 999;
 }
 .menu-interno{
@@ -251,7 +251,6 @@
 }
 /*===== NAV HEADER LATERAL*/
 .nav-menu{
-    margin-top: 10px;
     width: 160px;
 }
 #nav-home-lat .nav-menu li{
@@ -386,6 +385,9 @@
     border: 2px solid var(--btn-color);
     color: var(--btn-color);   
 }
+.main-usuarios p{
+    display: none;
+}
 .main-paginas{
     padding: 20px;
 }
@@ -448,6 +450,70 @@
 }
 .table-usuarios .tbody-content td{
     height: 57px;
+}
+/*===== CONFIGURACAO CADASTRO =====*/
+#body-cadastro{
+    height: 100vh;
+    background-color: var(--bg-color);
+}
+#body-cadastro header{
+    display: none;
+}
+#main-cadastro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#main-cadastro h1{
+    padding: 90px 0px 10px 0px;
+}
+#main-cadastro h1 img{
+    height: 84px;
+}
+.form-config-cad{
+    background-color: #fff;
+    width: 320px;
+    border: 1px solid var(--border-color);
+    padding: 20px;
+}
+.form-config-cad h4{
+    font-weight: 500;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+.form-config-cad .div-title{
+    width: 170px;
+    font-size: .9rem;
+    font-weight: 500;
+}
+.form-config-cad .d-flex{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 30px;
+}
+.form-config-cad input[type=submit]{
+    width: 105px;
+    height: 30px;
+    background-color: var(--btn-color);
+    color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+}
+.form-config-cad .input-area{
+    height: 30px;
+    padding-left: 5px;
+    border-radius: 3px;
+    border: 1px solid var(--border-color);
+    width: 220px;
+    outline: none;
+}
+.form-config-cad .input-area:focus{
+    border: 2px solid var(--btn-color);
+}
+.form-config-cad input[type=submit]:hover{
+    background-color: var(--hover-color);
 }
 /*===== CONFIGURACAO =====*/
 #main-config{
@@ -535,22 +601,200 @@
     padding: 10px 20px;
     color: var(--font-color);
 }
-/*===== PERFIL PAGE =====*/
-.container-perfil{
-    padding: 20px;
-    height: 70%;
+/*===== RESPONSIVE P =====*/
+@media screen and (min-width: 320px){
+    /*===== LOGIN PAGE =====*/
+    #login h1 img{
+        width: 57px;
+        height: 57px;
+    }
+    .form-login{
+        width: 270px;
+        height: 205px;
+    }
+    .style-input-mobile{
+        height: 30px;
+    }
+    /*===== HOME PAGE =====*/
+    .header-menu-esq .header-item{
+display: block;
+    }
+    #nav-home-lat{
+        margin-top: 30px;
+        display: none;
+    }
+    .main-painel .bv-h2-painel h2{
+        font-size: 2.2rem;
+    }
+    #footer .footer-version{
+        display: none;
+    }
+    /*===== USERS PAGE =====*/
+    .main-usuarios{
+        padding: 0px;
+    }
+    .form-usuarios {
+        flex-direction: column-reverse;
+        align-items: start;
+        padding-left: 10px;
+        height: 70px;
+    }
+    .form-usuarios div{
+        height: 30px;
+    }
+    .main-usuarios .table-usuarios {
+        margin: auto;
+        width: 95%;
+        border: 1px solid var(--border-color);
+        border-spacing: 0px;
+        font-size: .8rem;
+    }
+    .main-usuarios .table-usuarios .info-none-mobile{
+        display: none;
+    }
+    .table-usuarios .tbody-content td {
+        height: 90px;
+    }
+    .table-usuarios tbody .btn-edit{
+        margin-top: 10px;
+    }
+    .table-usuarios thead, .tfoot-usuarios{
+        text-align: center;
+    }
+    .main-usuarios .table-usuarios tbody{
+        text-align: center;
+    }
+    .column-btns{
+        display: none;
+    }
+    .main-usuarios p{
+        display: block;
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: var(--font-color);
+        text-align: center;
+        margin-top: 10px;
+    }
+    .form-usuarios-bottom{
+        display: none;
+    }
+    /*===== PERFIL PAGE =====*/
+    .form-config .div-title {
+        font-size: .8rem;
+        font-weight: 500;
+    }
+    .form-config .input-area{
+        width: 470px;
+        padding-left: 5px;
+    }
 }
-.container-perfil .perfil-infos{
-    height: 100%;
+/*===== RESPONSIVE M =====*/
+@media screen and (min-width: 375px){
+    /*===== USERS PAGE =====*/
+    .main-usuarios .table-usuarios {
+        width: 95%;
+    }
+    .main-usuarios p{
+        font-size: .9rem;
+    }
+    
 }
-.perfil-infos h4{
-    font-size: 0.9rem;
-    font-weight: 500;
-    margin-bottom: 5px;
+/*===== RESPONSIVE G =====*/
+@media screen and (min-width: 425px){
+    /*===== LOGIN PAGE =====*/
+    #login h1 img{
+        height: 84px;
+        width: 84px;
+        margin: 20px 0px;
+    }
+    .form-login{
+        height: 254px;
+        width: 320px;
+    }
+    .style-input-mobile{
+        height: 40px;
+    }
+    /*===== USERS PAGE =====*/
+    .main-usuarios .table-usuarios {
+        width: 95%;
+        font-size: .9rem;
+    }
 }
-.perfil-infos p{
-    font-size: 1.2rem;
+/*===== RESPONSIVE TABLET =====*/
+@media screen and (min-width: 768px){
+    /*===== LOGIN PAGE =====*/
+    #login h1 img{
+        height: 84px;
+        width: 84px;
+        margin: 20px 0px;
+    }
+    .form-login{
+        height: 254px;
+        width: 320px;
+    }
+    .style-input-mobile{
+        height: 40px;
+    }
+    /*===== USERS PAGE =====*/
+    .main-usuarios .table-usuarios {
+        margin-top: 10px;
+        width: 95%;
+        font-size: 1rem;
+    }
+    .column-btns{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .column-btns .edit{
+        margin-right: 5px;
+    }
+    .main-usuarios p{
+        display: none;
+    }
 }
-.perfil-infos hr{
-    margin-bottom: 20px;
+@media screen and (min-width: 1024px){
+    /*===== LOGIN PAGE =====*/
+    #login h1 img{
+        height: 84px;
+        width: 84px;
+        margin: 20px 0px;
+    }
+    .form-login{
+        height: 254px;
+        width: 320px;
+    }
+    .style-input-mobile{
+        height: 40px;
+    }
+    /*===== USERS PAGE =====*/
+    .main-usuarios .table-usuarios {
+        margin-top: 0px;
+        width: 95%;
+    }
+    .header-menu-esq .header-item{
+        display: none;
+    }
+    #nav-home-lat{
+        margin-top: 30px;
+        display: block;
+    }
+    .main-painel .bv-h2-painel h2{
+        font-size: 2.2rem;
+    }
+    #footer .footer-version{
+        display: none;
+    }
+    .main-usuarios{
+        padding: 20px;
+    }
+    .form-usuarios {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .main-usuarios .table-usuarios .info-none-mobile{
+        display: table-cell;
+    }
+
 }
