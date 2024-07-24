@@ -451,6 +451,9 @@
 .table-usuarios .tbody-content td{
     height: 57px;
 }
+.main-usuarios .table-usuarios tbody{
+    overflow: scroll;
+}
 /*===== CONFIGURACAO CADASTRO =====*/
 #body-cadastro{
     height: 100vh;

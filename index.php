@@ -6,7 +6,6 @@ if(!isset($_SESSION['ID'])){
 }
 $nome = explode(' ',$_SESSION['nome']);
 $rota = explode('/', $_GET['url'] ?? 'painel');
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -26,7 +25,7 @@ $rota = explode('/', $_GET['url'] ?? 'painel');
                 </li>
                 <li class="header-item">
                     <a href="usuarios">Usuários</a>
-</li>
+                </li>
             </ul>
         </div>
         <div class="header-menu-dir">
@@ -53,12 +52,14 @@ $rota = explode('/', $_GET['url'] ?? 'painel');
                     <span class="spanMsg" >Painel</span>
                 </a>
             </li>
+            <?php if($_SESSION['cargo'] == 'adm'): ?>
             <li id="menu-externo" class="nav-menu-item classRel">
-                <a class="menu-item" href=<?= ($_SESSION['cargo'] == 'adm')? "usuarios": "perfil"; ?>>
+                <a class="menu-item" href="usuarios">
                     <i class='bx bx-message-square-add'></i>
                     <span class="spanMsg" >Usuário</span>
                 </a>
             </li>
+            <?php endif; ?>
             <li id="menu-externo" class="nav-menu-item classRel">
                 <a class="menu-item" href="configuracoes">
                     <i class='bx bx-message-square-add'></i>

@@ -10,7 +10,6 @@ if(isset($_SESSION['ID'])){
     include_once('config/infoUser.php');
     include_once('config/email.php');
 }else{
-    session_start();
     include_once('../config/conn.php');
     include_once('../config/verifica.php');
     include_once('../config/infoUser.php');
@@ -21,19 +20,19 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && empty($_SESSION['ID']) && empty($_GE
     if(!empty($_POST['nome']) && 
     !empty($_POST['dataNasc']) && 
     !empty($_POST['email']) && 
-    !empty($_POST['pass'])){
-        $resultVerifica = verifica($_POST);   
+    !empty($_POST['pass']) &&
+    !empty($_POST['pass2'])){
+        $resultVerifica = verifica($_POST);
         if($resultVerifica){
-            foreach($_POST as $key => $value){
-                $_SESSION[$key] = $value;
+            $resultInsert = insertUser($_POST);
+            if($resultInsert){
+                session_start();
+                $infoUser = infoSelect($_POST['email']);
+                header('location: ../index.php');
             }
+        }else{
+            $flagErrorAtt = true;
         }
-        $resultInsert = insertUser($_SESSION);
-        if($resultInsert){
-            $infoUser = infoSelect($_SESSION['email']);
-            header('location: ../index.php');
-        }
-        $flagErrorAtt = true;
     }else{
         $flagErrorCampos = true;
     }
@@ -45,15 +44,21 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_SESSION['ID']) && !isset($_G
         $flagSuccessUpdate = true;
         $sendEmail = sendEmail($resulInfo);
     }
+    allInfo($_SESSION['ID']);
+    header('Refresh: 0');
 }
 if(isset($_GET['ID'])){
-    $id = $_GET['ID'];
-    $sqlSelect = "SELECT *  FROM $table WHERE ID = '$id';";
-    $result = $conn->Query($sqlSelect);
-    $result = $result->fetch_assoc();
-    $item = [];
-    foreach((array)$result as $key => $value){
-        $item[$key] = $value;
+    if(($_SESSION['cargo'] == 'adm' || $_SESSION['ID'] == $_GET['ID'])){
+        $id = $_GET['ID'];
+        $sqlSelect = "SELECT *  FROM $table WHERE ID = '$id';";
+        $result = $conn->Query($sqlSelect);
+        $result = $result->fetch_assoc();
+        $item = [];
+        foreach((array)$result as $key => $value){
+            $item[$key] = $value;
+        }
+    }else{
+        header('location: index.php');
     }
 }
 if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($item)){ //att perfil pelo adm
@@ -63,6 +68,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($item)){ //att perfil pelo adm
     }
     $sendEmail = sendEmail($item);
     echo $sendEmail;
+    echo 'cad por att adm';
 }
 ?>
 <!DOCTYPE html>
@@ -128,7 +134,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($item)){ //att perfil pelo adm
                     ?>">
                 </div>
             </div>
-            <?php if($_SESSION['cargo'] == "adm"): ?>
             <div class="cargo">
                 <h4>Cargo</h4>
                 <div class="d-flex">
@@ -136,13 +141,14 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($item)){ //att perfil pelo adm
                         <label class="title" for="cargo">Cargo do usuário</label>
                     </div>
                     <select class="input-area" name="cargo" id="">
-                        <option value="">Selecione:</option>
+                        <option value=""><?= ($_SESSION['cargo'] == 'adm')? 'Adimininistradro': 'Usuário';?></option>
+                        <?php if($_SESSION['cargo'] == "adm"): ?>
                         <option value="user">Usuário</option>
                         <option value="adm">Adimininistradro</option>
+                        <?php endif; ?>
                     </select>
                 </div>
             </div>
-            <?php endif; ?>
             <div class="info-contato">
                 <h4>Informações de login</h4>
                 <div class="email d-flex">
