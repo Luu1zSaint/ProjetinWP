@@ -65,10 +65,10 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($item)){ //att perfil pelo adm
     $resultUpdate = updateUser($_POST, $item);
     if($resultUpdate){
         $flagSuccessUpdate = true;
+        header('Refresh: 0');
     }
     $sendEmail = sendEmail($item);
     echo $sendEmail;
-    echo 'cad por att adm';
 }
 ?>
 <!DOCTYPE html>

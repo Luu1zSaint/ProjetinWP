@@ -3,7 +3,8 @@ include_once('config/conn.php');
 $sqlSelect = "SELECT ID, nome, dataNasc, email, cargo FROM $table;";
 $result = $conn->Query($sqlSelect);
 $result = $result->fetch_all();
-
+$dataAtual = date('Y-m-d');
+$dataAtual = explode('-', $dataAtual);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -55,7 +56,16 @@ $result = $result->fetch_all();
                                 <span>(<?= $arr[4];?>)</span>
                             </a>
                         </td>
-                        <td><?= date('d/m/Y', strtotime($arr[2]));?></td>
+                        <td>
+                            <?php 
+                                echo date('d/m/Y', strtotime($arr[2]));
+                                $dataNasc = explode('-', $arr[2]);
+                                if($dataNasc[1] == $dataAtual[1] && $dataNasc[2] == $dataAtual[2] ){
+                                    $anus = 
+                                    echo
+                                }
+                            ?>
+                        </td>
                         <td><?= $arr[3];?></td>
                         <td class="column-btns">
                             <a class="btn-edit edit" href="configuracoes?ID=<?=$arr[0];?>"><span>Editar</span></a>
