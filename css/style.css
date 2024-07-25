@@ -376,6 +376,13 @@ html{
 .container-form-dir{
     height: 100%;
 }
+.container-form-esq input[type=search]{
+    height: 100%;
+    outline: none;
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+    padding-left: 5px;
+}
 .container-form-dir input[type=search]{
     height: 100%;
     outline: none;
@@ -607,7 +614,7 @@ html{
     color: var(--font-color);
 }
 /*===== RESPONSIVE P =====*/
-@media screen and (min-width: 320px){
+@media screen and (max-width: 320px), (max-width: 569px){
     /*===== LOGIN PAGE =====*/
     #login h1 img{
         width: 57px;
@@ -621,8 +628,12 @@ html{
         height: 30px;
     }
     /*===== HOME PAGE =====*/
+    #header{
+        position: fixed;
+        z-index: 999;
+    }
     .header-menu-esq .header-item{
-display: block;
+        display: block;
     }
     #nav-home-lat{
         margin-top: 30px;
@@ -634,14 +645,19 @@ display: block;
     #footer .footer-version{
         display: none;
     }
+    .header-menu-esq .header-item{
+        display: block;
+    }
     /*===== USERS PAGE =====*/
     .main-usuarios{
         padding: 0px;
     }
+    .form-usuarios input[type=submit]{
+        width: 104px;
+    }
     .form-usuarios {
-        flex-direction: column-reverse;
-        align-items: start;
-        padding-left: 10px;
+        flex-direction: column;
+        margin-bottom: 20px;
         height: 70px;
     }
     .form-usuarios div{
@@ -652,16 +668,17 @@ display: block;
         width: 95%;
         border: 1px solid var(--border-color);
         border-spacing: 0px;
-        font-size: .8rem;
     }
     .main-usuarios .table-usuarios .info-none-mobile{
         display: none;
     }
-    .table-usuarios .tbody-content td {
-        height: 90px;
+    .main-usuarios .table-usuarios{
+        margin-top: 20px;
+        border: none;
     }
     .table-usuarios tbody .btn-edit{
-        margin-top: 10px;
+        margin-left: 10px;
+        font-size: 0.9em;
     }
     .table-usuarios thead, .tfoot-usuarios{
         text-align: center;
@@ -669,16 +686,42 @@ display: block;
     .main-usuarios .table-usuarios tbody{
         text-align: center;
     }
-    .column-btns{
+    .table-usuarios thead,
+    .table-usuarios tfoot{
         display: none;
     }
-    .main-usuarios p{
+    .table-usuarios,
+    .table-usuarios tbody,
+    .table-usuarios tr,
+    .table-usuarios td{
         display: block;
-        font-size: 0.85rem;
+        width: 100%;
+    }
+    .table-usuarios .tbody-content{
+        margin-bottom: 20px;
+    }
+    .table-usuarios .tbody-content td{
+        height: 35px;
+        padding-left: 27%;
+        border: 1px solid var(--border-color);
+        border-bottom: none;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: .9rem;
+    }
+    .table-usuarios .tbody-content td::before{
+        content: attr(dataLabel);
+        position: absolute;
+        left: 5px;
         font-weight: 500;
-        color: var(--font-color);
-        text-align: center;
-        margin-top: 10px;
+    }
+    .table-usuarios .tbody-content .column-btns{
+        height: 50px;
+        border: 1px solid var(--border-color);
+        display: flex;
+        align-items: center;
     }
     .form-usuarios-bottom{
         display: none;
@@ -692,97 +735,40 @@ display: block;
         width: 470px;
         padding-left: 5px;
     }
-}
-/*===== RESPONSIVE M =====*/
-@media screen and (min-width: 375px){
-    /*===== USERS PAGE =====*/
-    .main-usuarios .table-usuarios {
-        width: 95%;
+    /*===== CADASTRO PAGE =====*/
+    #main-cadastro h1{
+        padding: 70px 0px 10px 0px;
     }
-    .main-usuarios p{
+    #main-cadastro h1 img{
+        height: 78px;
+    }
+    .form-config-cad{
+        width: 290px;
+        padding: 20px;
+    }
+    .form-config-cad h4{
+        margin-bottom: 10px;
+    }
+    .form-config-cad .div-title{
+        width: 125px;
         font-size: .9rem;
     }
-    
-}
-/*===== RESPONSIVE G =====*/
-@media screen and (min-width: 425px){
-    /*===== LOGIN PAGE =====*/
-    #login h1 img{
-        height: 84px;
-        width: 84px;
-        margin: 20px 0px;
-    }
-    .form-login{
-        height: 254px;
-        width: 320px;
-    }
-    .style-input-mobile{
-        height: 40px;
-    }
-    /*===== USERS PAGE =====*/
-    .main-usuarios .table-usuarios {
-        width: 95%;
-        font-size: .9rem;
+    .form-config-cad .d-flex{
+        margin-bottom: 20px;
     }
 }
 /*===== RESPONSIVE TABLET =====*/
-@media screen and (min-width: 768px){
-    /*===== LOGIN PAGE =====*/
-    #login h1 img{
-        height: 84px;
-        width: 84px;
-        margin: 20px 0px;
-    }
-    .form-login{
-        height: 254px;
-        width: 320px;
-    }
-    .style-input-mobile{
-        height: 40px;
-    }
-    /*===== USERS PAGE =====*/
-    .main-usuarios .table-usuarios {
-        margin-top: 10px;
-        width: 95%;
-        font-size: 1rem;
-    }
-    .column-btns{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .column-btns .edit{
-        margin-right: 5px;
-    }
-    .main-usuarios p{
-        display: none;
-    }
-}
-@media screen and (min-width: 1024px){
-    /*===== LOGIN PAGE =====*/
-    #login h1 img{
-        height: 84px;
-        width: 84px;
-        margin: 20px 0px;
-    }
-    .form-login{
-        height: 254px;
-        width: 320px;
-    }
-    .style-input-mobile{
-        height: 40px;
-    }
-    /*===== USERS PAGE =====*/
-    .main-usuarios .table-usuarios {
-        margin-top: 0px;
-        width: 95%;
+@media screen and (min-width: 570px){
+    #header{
+        position: fixed;
+        z-index: 999;
     }
     .header-menu-esq .header-item{
-        display: none;
+        display: block;
     }
     #nav-home-lat{
         margin-top: 30px;
-        display: block;
+        display: none;
     }
     .main-painel .bv-h2-painel h2{
         font-size: 2.2rem;
@@ -790,16 +776,95 @@ display: block;
     #footer .footer-version{
         display: none;
     }
+    .header-menu-esq .header-item{
+        display: block;
+    }
+    /*===== USERS PAGE =====*/
     .main-usuarios{
-        padding: 20px;
+        padding: 0px;
+    }
+    .form-usuarios input[type=submit]{
+        width: 104px;
     }
     .form-usuarios {
-        display: flex;
+        padding: 0px 20px;
+        margin-bottom: 20px;
+        height: 70px;
+    }
+    .form-usuarios div{
+        height: 30px;
+    }
+    .main-usuarios .table-usuarios {
+        margin: auto;
+        width: 95%;
+        border: 1px solid var(--border-color);
+        border-spacing: 0px;
+    }
+    /*===== PERFIL PAGE =====*/
+    .form-config .div-title {
+        font-size: .8rem;
+        font-weight: 500;
+    }
+    .form-config .input-area{
+        width: 470px;
+        padding-left: 5px;
+    }
+}
+@media screen and (min-width: 768px){
+    .header-menu-esq .header-item{
+        display: block;
+    }
+    #nav-home-lat{
+        margin-top: 30px;
+        display: none;
+    }
+    .main-painel .bv-h2-painel h2{
+        font-size: 2.2rem;
+    }
+    #footer .footer-version{
+        display: none;
+    }
+    .header-menu-esq .header-item{
+        display: block;
+    }
+    /*===== USERS PAGE =====*/
+    .main-usuarios{
+        padding: 0px;
+    }
+    .form-usuarios input[type=submit]{
+        width: 104px;
+    }
+    .form-usuarios {
         flex-direction: row;
-        justify-content: space-between;
+        padding: 0px 20px;
+        margin-bottom: 20px;
+        height: 70px;
     }
-    .main-usuarios .table-usuarios .info-none-mobile{
-        display: table-cell;
+    .form-usuarios div{
+        height: 30px;
     }
-
+    .main-usuarios .table-usuarios {
+        margin: auto;
+        width: 95%;
+        border: 1px solid var(--border-color);
+        border-spacing: 0px;
+    }
+    /*===== PERFIL PAGE =====*/
+    .form-config .div-title {
+        font-size: .8rem;
+        font-weight: 500;
+    }
+    .form-config .input-area{
+        width: 470px;
+        padding-left: 5px;
+    }
+}
+@media screen and (min-width: 1024px){
+    .header-menu-esq .header-item{
+        display: none;
+    }
+    #nav-home-lat{
+        margin-top: 30px;
+        display: block;
+    }
 }

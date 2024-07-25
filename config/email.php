@@ -62,7 +62,6 @@ function sendEmail($arr){
                         </tr>
                     </table>
                 </html>";
-
         $mail->send();
         return true;
     } catch (Exception $e) {
