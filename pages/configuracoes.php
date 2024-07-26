@@ -42,7 +42,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_SESSION['ID']) && !isset($_G
     $resultUpdate = updateUser($_POST, $resulInfo);
     if($resultUpdate){
         $flagSuccessUpdate = true;
-        $sendEmail = sendEmail($resulInfo);
     }
     allInfo($_SESSION['ID']);
     header('Refresh: 0');
@@ -65,7 +64,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($item)){ //att perfil pelo adm
     $resultUpdate = updateUser($_POST, $item);
     if($resultUpdate){
         $flagSuccessUpdate = true;
-        $sendEmail = sendEmail($item);
     }
     header('Refresh: 0');
     
@@ -175,6 +173,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($item)){ //att perfil pelo adm
             <?php endif; ?>
             <input type="submit" value="<?= ($session)? 'Atualizar perfil': 'Cadastrar-se';?>">
         </form>
+        <div class="voltar">
+            <p><a href="../">⟵ Voltar</a></p>
+        </div>
     </main>
 </body>
 </html>

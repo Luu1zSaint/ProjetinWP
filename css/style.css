@@ -60,7 +60,7 @@ html{
     justify-content: center;
     border: 1px solid #3c434a5d;
 }
-.form-login p{
+.form-login .user-input-name p{
     color: var(--font-color);
     font-size: .85rem;
 }
@@ -117,6 +117,46 @@ html{
 }
 .footer-info p a:hover{
     color: var(--hover-color);
+}
+/*===== RECUPERAR PAGE =====*/
+#recup .recupHidden{
+    display: none;
+}
+#recup{
+    height: 510px;
+    margin-top: 65px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#recup .form-login{
+    height: 220px;
+}
+#recup .p-email{
+    color: var(--font-color);
+    font-size: .9rem;
+    margin-bottom: 10px;
+}
+#recup .recupInput {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.recupInput input[type=submit] {
+    height: 34px;
+    width: 69px;
+    background-color: var(--btn-color);
+    color: #fff;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+}
+#recup .footer-info {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
 /*===== HOME PAGE =====*/
 #container-home{
@@ -601,6 +641,17 @@ html{
 .form-config input[type=submit]:hover{
     background-color: var(--hover-color);
 }
+#main-cadastro .voltar{
+    width: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+#main-cadastro .voltar a{
+    text-decoration: none;
+    color: var(--font-color);
+    font-size: 0.8rem;
+}
 /*===== FOOTER PAGE =====*/
 #footer{
     background-color: var(--bg-color);
@@ -626,6 +677,9 @@ html{
     }
     .style-input-mobile{
         height: 30px;
+    }
+    #main-cadastro .voltar{
+        width: 290px;
     }
     /*===== HOME PAGE =====*/
     #header{
