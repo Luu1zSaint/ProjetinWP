@@ -64,6 +64,10 @@ html{
     color: var(--font-color);
     font-size: .85rem;
 }
+.form-login .user-input-pass p{
+    color: var(--font-color);
+    font-size: .85rem;
+}
 .user-input-name{
     margin-bottom: 20px;
 }

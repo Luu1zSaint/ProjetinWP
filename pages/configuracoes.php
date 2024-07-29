@@ -138,13 +138,13 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($item)){ //att perfil pelo adm
                     <div class="div-title">
                         <label class="title" for="cargo">Cargo do usuário</label>
                     </div>
-                    <select class="input-area" name="cargo" id="">
-                        <option value=""><?= ($_SESSION['cargo'] == 'adm')? 'Adimininistradro': 'Usuário';?></option>
-                        <?php if($_SESSION['cargo'] == "adm"): ?>
-                        <option value="user">Usuário</option>
-                        <option value="adm">Adimininistradro</option>
-                        <?php endif; ?>
-                    </select>
+                    <div class="input-area" name="cargo" id="">
+                        <?php if($_SESSION['cargo'] == "adm"){
+                            echo '<label class="title" for="cargo">Usuário</label>';
+                        }else{
+                            echo '<label class="title" for="cargo">Adimininistradro</label>';
+                        } ?>
+                    </div>
                 </div>
             </div>
             <div class="info-contato">
@@ -173,9 +173,11 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($item)){ //att perfil pelo adm
             <?php endif; ?>
             <input type="submit" value="<?= ($session)? 'Atualizar perfil': 'Cadastrar-se';?>">
         </form>
-        <div class="voltar">
+        <?php if(!$session): ?>
+            <div class="voltar">
             <p><a href="../">⟵ Voltar</a></p>
-        </div>
+            </div>
+        <?php endif;?>
     </main>
 </body>
 </html>
